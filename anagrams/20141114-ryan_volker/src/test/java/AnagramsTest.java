@@ -38,6 +38,7 @@ public class AnagramsTest {
         assertThat(anagrams).contains(startWordReversed);
     }
 
+    @Test
     public void shouldReturnSixAnagramsIf3Chars() {
         String startWord = "123";
         String[] expectedAnagrams = {"123", "132", "213", "231", "312", "321"};

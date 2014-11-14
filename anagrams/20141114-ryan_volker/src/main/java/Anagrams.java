@@ -19,6 +19,17 @@ public class Anagrams {
         if (startText.length() > 1) {
             arrayList.add(lastToFirst(startText));
         }
+
+        char firstChar = startText.charAt(0);
+        String remaining = startText.substring(1);
+
+        for(int i = 0; i < 3; i++){
+           StringBuilder stringBuilder = new StringBuilder();
+           stringBuilder.append(remaining.substring(0, i));
+           stringBuilder.append(firstChar);
+           stringBuilder.append(remaining.substring(i));
+        }
+        // bye volker :-)
         return arrayList;
     }
 
@@ -26,3 +37,4 @@ public class Anagrams {
         return startText.substring(1) + startText.charAt(0);
     }
 }
+
