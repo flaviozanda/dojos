@@ -13,9 +13,16 @@ import java.util.List;
  * obir obri oibr oirb orbi orib
  */
 public class Anagrams {
-           public List<String> of(String startText){
-               ArrayList<String> arrayList = new ArrayList<String>();
-               arrayList.add(startText);
-               return arrayList;
-           }
+    public List<String> of(String startText) {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add(startText);
+        if (startText.length() > 1) {
+            arrayList.add(lastToFirst(startText));
+        }
+        return arrayList;
+    }
+
+    private String lastToFirst(String startText) {
+        return startText.substring(1) + startText.charAt(0);
+    }
 }

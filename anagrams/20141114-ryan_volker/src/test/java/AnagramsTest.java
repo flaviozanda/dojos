@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -35,5 +36,14 @@ public class AnagramsTest {
         assertThat(anagrams).hasSize(2);
         assertThat(anagrams).contains(startWord);
         assertThat(anagrams).contains(startWordReversed);
+    }
+
+    public void shouldReturnSixAnagramsIf3Chars() {
+        String startWord = "123";
+        String[] expectedAnagrams = {"123", "132", "213", "231", "312", "321"};
+
+        List<String> anagrams = new Anagrams().of(startWord);
+
+        assertThat(anagrams).isEqualTo(Arrays.asList(expectedAnagrams));
     }
 }
