@@ -21,6 +21,7 @@ public class AnagramsTest {
 
     private static String INPUT = "biro";
     private static String[] TWO_LETTERS_OUTPUT = {"ab", "ba"};
+    private static String[] THREE_LETTERS_OUTPUT = {"abc", "acb", "bac", "bca", "cab", "cba"};
 
     @Test
     public void testOneCharStringHasTheSameAnagram() throws Exception {
@@ -37,6 +38,11 @@ public class AnagramsTest {
     @Test
     public void testTwoLettersString() {
         assertThat(Anagrams.anagramsFor("ab")).isEqualTo(Arrays.asList(TWO_LETTERS_OUTPUT));
+    }
+
+    @Test
+    public void testThreeLettersString() {
+        assertThat(Anagrams.anagramsFor("abc")).isEqualTo(Arrays.asList(THREE_LETTERS_OUTPUT));
     }
 
 }
