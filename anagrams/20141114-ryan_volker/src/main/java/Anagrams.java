@@ -31,11 +31,7 @@ public class Anagrams {
     }
 
     private String insertCharAtPosition(char character, int position, String text) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(text.substring(0, position));
-        builder.append(character);
-        builder.append(text.substring(position));
-        return builder.toString();
+        return text.substring(0, position) + character + text.substring(position);
     }
 }
 
