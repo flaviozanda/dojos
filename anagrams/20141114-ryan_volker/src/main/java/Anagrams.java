@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Write a program to generate all potential
  * anagrams of an input string.
@@ -10,5 +13,9 @@
  * obir obri oibr oirb orbi orib
  */
 public class Anagrams {
-
+           public List<String> of(String startText){
+               ArrayList<String> arrayList = new ArrayList<String>();
+               arrayList.add(startText);
+               return arrayList;
+           }
 }

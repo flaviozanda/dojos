@@ -1,3 +1,9 @@
+import java.util.List;
+
+import org.junit.Test;
+
+import static org.fest.assertions.api.Assertions.assertThat;
+
 /**
  * Write a program to generate all potential
  * anagrams of an input string.
@@ -11,4 +17,23 @@
  */
 public class AnagramsTest {
 
+    @Test
+     public void shouldReturnSelfIfOneCharacter() {
+         String startWord = "s";
+         List<String> anagrams = new Anagrams().of(startWord);
+
+         assertThat(anagrams).hasSize(1);
+         assertThat(anagrams).contains(startWord);
+     }
+
+    @Test
+    public void shouldReturnTwoAnagramsIfTwoCharacters() {
+        String startWord = "st";
+        String startWordReversed = "ts";
+        List<String> anagrams = new Anagrams().of(startWord);
+
+        assertThat(anagrams).hasSize(2);
+        assertThat(anagrams).contains(startWord);
+        assertThat(anagrams).contains(startWordReversed);
+    }
 }
