@@ -45,6 +45,6 @@ public class AnagramsTest {
 
         List<String> anagrams = new Anagrams().of(startWord);
 
-        assertThat(anagrams).isEqualTo(Arrays.asList(expectedAnagrams));
+        assertThat(anagrams).containsAll(Arrays.asList(expectedAnagrams));
     }
 }

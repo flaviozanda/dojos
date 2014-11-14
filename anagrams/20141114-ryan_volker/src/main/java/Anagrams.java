@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -14,27 +15,27 @@ import java.util.List;
  */
 public class Anagrams {
     public List<String> of(String startText) {
-        ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.add(startText);
-        if (startText.length() > 1) {
-            arrayList.add(lastToFirst(startText));
+        if (startText.length() <= 1) {
+            return Collections.singletonList(startText);
         }
-
         char firstChar = startText.charAt(0);
         String remaining = startText.substring(1);
-
-        for(int i = 0; i < 3; i++){
-           StringBuilder stringBuilder = new StringBuilder();
-           stringBuilder.append(remaining.substring(0, i));
-           stringBuilder.append(firstChar);
-           stringBuilder.append(remaining.substring(i));
+        List<String> baseTexts = of(remaining);
+        ArrayList<String> anas = new ArrayList<String>();
+        for (String baseText : baseTexts) {
+            for (int i = 0; i < startText.length(); i++) {
+                anas.add(insertCharAtPosition(firstChar, i, baseText));
+            }
         }
-        // bye volker :-)
-        return arrayList;
+        return anas;
     }
 
-    private String lastToFirst(String startText) {
-        return startText.substring(1) + startText.charAt(0);
+    private String insertCharAtPosition(char character, int position, String text) {
+        StringBuilder builder = new StringBuilder();
+        builder.append(text.substring(0, position));
+        builder.append(character);
+        builder.append(text.substring(position));
+        return builder.toString();
     }
 }
 
