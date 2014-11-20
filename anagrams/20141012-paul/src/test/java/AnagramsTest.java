@@ -24,7 +24,7 @@ public class AnagramsTest {
 
         List<String> output = Anagrams.generate(input);
 
-        assertThat(output).hasSize(24);
+        assertThat(output).hasSize(28);
     }
 
     @Test // testSwapFirstLetterIntoFirstPosition
