@@ -45,6 +45,16 @@ public class AnagramsTest {
         assertThat(result).isEqualTo(expected);
     }
 
+
+    @Test
+    public void fooootestAnagramForAIsItself() throws Exception {
+        List<String> expected = ANAGRAMS_FOR_A;
+
+        List<String> result = anagrams.from(A);
+
+        assertThat(result).isEqualTo(expected);
+    }
+
     @Test
     public void testAnagramsForAbHasCorrectLength() throws Exception {
         List<String> expected = ANAGRAMS_FOR_AB;
