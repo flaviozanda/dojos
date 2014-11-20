@@ -24,7 +24,17 @@ public class AnagramsTest {
 
         List<String> output = Anagrams.generate(input);
 
-        assertThat(output).hasSize(28);
+        assertThat(output).hasSize(24);
+    }
+
+
+    @Test
+    public void testCalculateTotalAnagrasdfsdfsdms() throws Exception {
+        String input = "four";
+
+        List<String> output = Anagrams.generate(input);
+
+        assertThat(output).hasSize(24);
     }
 
     @Test // testSwapFirstLetterIntoFirstPosition
