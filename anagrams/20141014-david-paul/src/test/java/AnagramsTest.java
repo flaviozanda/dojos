@@ -51,6 +51,15 @@ public class AnagramsTest {
     }
 
     @Test
+    public void testFirstTwoLetterOfBenAreSwappedw334() throws Exception {
+        String input = "ben";
+
+        List<String> output = Anagrams.generate(input);
+
+        assertThat(output).contains("ebn");
+    }
+
+    @Test
     public void testFirstLetterOfBenIsSwappedWithTheLast() throws Exception {
         String input = "ben";
 
