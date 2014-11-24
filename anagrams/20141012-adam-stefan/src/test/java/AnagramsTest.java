@@ -42,4 +42,13 @@ public class AnagramsTest {
         assertThat(output.size()).isEqualTo(BIRO_MAX_COMBINATIONS);
     }    
     
+    @Test
+    public void testMaximumLetterCount3() {
+        Anagrams anagrams = new Anagrams("biro");
+
+        List<String> output = anagrams.generate();
+
+        assertThat(output.size()).isEqualTo(BIRO_MAX_COMBINATIONS);
+    }    
+    
 }
